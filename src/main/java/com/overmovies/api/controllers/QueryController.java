@@ -28,6 +28,11 @@ public class QueryController {
         this.modelMapper = mapper;
     }
 
+    @GetMapping
+    public String apiRouteTest() {
+        return "Api its Work!";
+    }
+
     @GetMapping("{queryValue}")
     public List<MovieDto> getMovieByname(@Nullable @PathVariable String queryValue) {
         List<Movie> entityList = service.getMoviesByName(queryValue);
